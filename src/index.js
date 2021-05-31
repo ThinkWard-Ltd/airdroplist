@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Router from './router';
 import reportWebVitals from './reportWebVitals';
-
+import Providers from './providers'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router />
+    <Providers>
+      <Router />
+    </Providers>
   </React.StrictMode>,
   document.getElementById('root')
 );

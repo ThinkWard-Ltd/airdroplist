@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import Theme from './theme'
 const Header = styled.header`
   border-bottom: 1px solid #ffeaef;
   background-color: #fff;
@@ -37,6 +37,7 @@ export default () => {
     <Header>
       <HeaderBody>
         <Logo>Airdrop List</Logo>
+        <Theme />
       </HeaderBody>
     </Header>
   );
