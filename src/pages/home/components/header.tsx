@@ -32,12 +32,16 @@ const Logo = styled.div`
   }
 `
 
+const ThemeC = styled(Theme)`
+  float: right;
+`
+
 export default () => {
   return (
     <Header>
       <HeaderBody>
         <Logo>Airdrop List</Logo>
-        <Theme />
+        <ThemeC />
       </HeaderBody>
     </Header>
   );
