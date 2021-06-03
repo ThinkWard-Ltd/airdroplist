@@ -28,6 +28,15 @@ export default () => {
       <Body>
         <AirDrop>
           <Token />
+          <Token />
+          <Token />
+          <Token />
+          <Token />
+          <Token />
+          <Token />
+          <Token />
+          <Token />
+          <Token />
         </AirDrop>
       </Body>
     </>

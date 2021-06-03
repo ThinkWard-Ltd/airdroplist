@@ -61,7 +61,7 @@ export default () => {
         </div>
       </Title>
       <H2>
-        Aiddrop List 是一个整合优质区块链项目空投，为用户提供最优质的，最有价值的区块链空投。Aiddrop List 也是一个为优质的区块链项目提供媒体宣传的平台。
+        Airdrop List 是一个整合优质区块链项目空投，为用户提供最优质的，最有价值的区块链空投。Airdrop List 也是一个为优质的区块链项目提供媒体宣传的平台。
       </H2>
       <Emit />
     </Banner>
