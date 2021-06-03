@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 import {useState} from 'react'
-import Header from './components/header'
+import Header from 'layouts/header'
 import Tip from './components/tip'
 import Banner from './components/banner'
 import Token from './components/token'
+import Footer from 'layouts/footer'
 
 const Body = styled.div`
   width: 100%;
@@ -39,6 +40,7 @@ export default () => {
           <Token />
         </AirDrop>
       </Body>
+      <Footer />
     </>
   );
 }

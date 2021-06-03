@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import Icon from 'components/icon'
-import useTheme from '../../../hooks/useTheme'
+import useTheme from 'hooks/useTheme'
 
 interface StyleProps {
   dark: boolean
