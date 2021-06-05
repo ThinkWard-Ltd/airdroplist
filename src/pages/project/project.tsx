@@ -48,10 +48,27 @@ const BlockchainBrowser = styled.div`
   line-height: 46px;
   padding: 0 20px;
   border-radius: 23px;
+  background-color: #fff;
+  color: #212121;
+  cursor: pointer;
+  margin-right: 20px;
+  font-weight: 600;
+  font-size: 14px;
+
+  &:hover {
+    background-color: #212121;
+    color: #fff;
+  }
+`
+
+const JoinAirDrop  = styled(BlockchainBrowser)`
   background-color: #ff8ba7;
   color: #fff;
-  cursor: pointer;
-  margin: 20px 0;
+
+  &:hover {
+    background-color: #ff3465;
+    color: #fff;
+  }
 `
 
 const Platform = styled.svg`
@@ -67,28 +84,95 @@ const PlatformName= styled.span`
   margin: 0 10px;
 `
 
+const AirDropDetails = styled.div`
+  display: inline-block;
+`
+
+const TokenDetails = styled.div`
+  position: relative;
+  z-index: 1;
+  width: 534px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  border-radius: 16px;
+  word-wrap: break-word;
+  word-break: break-all;
+  display: inline-block;
+  float: right;
+  top: -35px;
+  background-color: #fff;
+`
+
+const TokenDetailsItem = styled.div`
+  height: 65px;
+  line-height: 65px;
+  padding: 0 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #212121;
+
+  &:last-child {
+    border-bottom: none;
+  }
+`
+
+const TokenDetailsItemValue = styled.span`
+  display: inline-block;
+  height: 65px;
+  line-height: 65px;
+  float: right;
+`
+
 export default () => {
   return <>
     <Header />
       <BannerBox>
         <Banner>
-          <UserHeader>
-            <UserHeaderImg />
-            <BannerBackground />
-          </UserHeader>
-          <div style={{position: 'relative', zIndex: 1}}>
-            <TokenName>DSG</TokenName>
-            <ContractAddress>0x5150eabe0b11751c2800060f1c53cba268d0ac96</ContractAddress>
-            <BlockchainBrowser>区块链浏览器</BlockchainBrowser>
-            <div>
-              <Platform xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#F3BA2F"></path>
-                <path d="M9.087 10.803L12 7.89L14.9145 10.8045L16.6095 9.1095L12 4.5L7.392 9.108L9.087 10.803ZM4.5 12L6.195 10.305L7.89 12L6.195 13.695L4.5 12ZM9.087 13.197L12 16.11L14.9145 13.1955L16.6095 14.8898L12 19.5L7.392 14.892L7.38975 14.8898L9.087 13.197ZM16.11 12L17.805 10.305L19.5 12L17.805 13.695L16.11 12ZM13.719 11.9985H13.7205V12L12 13.7205L10.2817 12.003L10.2787 12L10.2817 11.9977L10.5825 11.6963L10.7288 11.55L12 10.2795L13.7197 11.9992L13.719 11.9985Z" fill="white"></path>
-              </Platform>
-              <PlatformName>币安智能链</PlatformName>
-              <TokenStatus />
+          <AirDropDetails>
+            <UserHeader>
+              <UserHeaderImg />
+              <BannerBackground />
+            </UserHeader>
+            <div style={{position: 'relative', zIndex: 1}}>
+              <TokenName>DSG</TokenName>
+              <ContractAddress>0x5150eabe0b11751c2800060f1c53cba268d0ac96</ContractAddress>
+              <div style={{margin: "20px 0"}}>
+                <JoinAirDrop>领取空投</JoinAirDrop>
+                <BlockchainBrowser>区块链浏览器</BlockchainBrowser>
+              </div>
+              <div>
+                <Platform xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#F3BA2F"></path>
+                  <path d="M9.087 10.803L12 7.89L14.9145 10.8045L16.6095 9.1095L12 4.5L7.392 9.108L9.087 10.803ZM4.5 12L6.195 10.305L7.89 12L6.195 13.695L4.5 12ZM9.087 13.197L12 16.11L14.9145 13.1955L16.6095 14.8898L12 19.5L7.392 14.892L7.38975 14.8898L9.087 13.197ZM16.11 12L17.805 10.305L19.5 12L17.805 13.695L16.11 12ZM13.719 11.9985H13.7205V12L12 13.7205L10.2817 12.003L10.2787 12L10.2817 11.9977L10.5825 11.6963L10.7288 11.55L12 10.2795L13.7197 11.9992L13.719 11.9985Z" fill="white"></path>
+                </Platform>
+                <PlatformName>币安智能链</PlatformName>
+                <TokenStatus />
+              </div>
             </div>
-          </div>
+          </AirDropDetails>
+          <TokenDetails>
+            <TokenDetailsItem>
+              名称
+              <TokenDetailsItemValue>单身狗狗</TokenDetailsItemValue>
+            </TokenDetailsItem>
+            <TokenDetailsItem>
+              符号
+              <TokenDetailsItemValue>DSG</TokenDetailsItemValue>
+            </TokenDetailsItem>
+            <TokenDetailsItem>
+              小数点
+              <TokenDetailsItemValue>18</TokenDetailsItemValue>
+            </TokenDetailsItem>
+            <TokenDetailsItem>
+              地址
+              <TokenDetailsItemValue>0x5150eabe0b11751c2800060f1c53cba268d0ac96</TokenDetailsItemValue>
+            </TokenDetailsItem>
+            <TokenDetailsItem>
+              总发型量
+              <TokenDetailsItemValue>111,111,111,111</TokenDetailsItemValue>
+            </TokenDetailsItem>
+          </TokenDetails>
         </Banner>
       </BannerBox>
     <Footer />

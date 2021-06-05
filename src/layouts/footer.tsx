@@ -2,9 +2,9 @@ import styled from 'styled-components'
 import Logo from 'components/logo'
 import Emit from 'components/emit'
 
-const Footer = styled.header`
+const Footer = styled.footer`
   background-color: #fff;
-  padding: 40px 0 80px 0;
+  padding: 40px 0;
 `
 const FooterBody = styled.div`
   max-width: 1100px;
@@ -110,23 +110,25 @@ export default () => {
           <BannerEmit>订阅可获取新的空投和重要的通知。</BannerEmit>
           <Emit />
         </Banner>
-        <FooterItem>
-          <Logo />
-          <Copyright>© AirdropList 2021</Copyright>
-        </FooterItem>
-        <ContactUs>
+        <div style={{height: '160px'}}>
           <FooterItem>
-            <FooterItemTitle>商务合作</FooterItemTitle>
-            <Link>申请空投</Link>
-            <Link>邮箱</Link>
+            <Logo />
+            <Copyright>© AirdropList 2021</Copyright>
           </FooterItem>
-          <FooterItem>
-            <FooterItemTitle>社交</FooterItemTitle>
-            <Link>电报群</Link>
-            <Link>推特</Link>
-            <Link>博客</Link>
-          </FooterItem>
-        </ContactUs>
+          <ContactUs>
+            <FooterItem>
+              <FooterItemTitle>商务合作</FooterItemTitle>
+              <Link>申请空投</Link>
+              <Link>邮箱</Link>
+            </FooterItem>
+            <FooterItem>
+              <FooterItemTitle>社交</FooterItemTitle>
+              <Link>电报群</Link>
+              <Link>推特</Link>
+              <Link>博客</Link>
+            </FooterItem>
+          </ContactUs>
+        </div>
       </FooterBody>
     </Footer>
   );
