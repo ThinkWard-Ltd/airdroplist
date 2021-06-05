@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Icon from 'components/icon'
+import TokenStatus from "components/status";
 
 const Token = styled.div`
   width: 346px;
@@ -21,17 +22,6 @@ const Token = styled.div`
   &:hover {
     border: 1px solid #ff3465;
   }
-
-  .spot {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-radius: 4px;
-    background-color: #10b981;
-    margin-right: 6px;
-  }
-
-
 `
 
 const TokenTitle = styled.div`
@@ -44,17 +34,6 @@ const TokenStatusBox = styled.div`
   height: 48px;
   line-height: 48px;
   float: right;
-`
-
-const TokenStatus = styled.div`
-  display: inline-block;
-  height: 26px;
-  line-height: 26px;
-  padding: 0 8px;
-  border-radius: 13px;
-  background-color: #d1fae5;
-  color: #10b981;
-  font-size: 12px;
 `
 
 const Platform = styled.svg`
@@ -122,10 +101,7 @@ export default () => {
             <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#F3BA2F"></path>
             <path d="M9.087 10.803L12 7.89L14.9145 10.8045L16.6095 9.1095L12 4.5L7.392 9.108L9.087 10.803ZM4.5 12L6.195 10.305L7.89 12L6.195 13.695L4.5 12ZM9.087 13.197L12 16.11L14.9145 13.1955L16.6095 14.8898L12 19.5L7.392 14.892L7.38975 14.8898L9.087 13.197ZM16.11 12L17.805 10.305L19.5 12L17.805 13.695L16.11 12ZM13.719 11.9985H13.7205V12L12 13.7205L10.2817 12.003L10.2787 12L10.2817 11.9977L10.5825 11.6963L10.7288 11.55L12 10.2795L13.7197 11.9992L13.719 11.9985Z" fill="white"></path>
           </Platform>
-          <TokenStatus>
-            <i className="spot" />
-            进行中
-          </TokenStatus>
+          <TokenStatus />
         </TokenStatusBox>
       </TokenTitle>
       <TokenName>

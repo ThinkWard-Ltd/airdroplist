@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 import Theme from './theme'
 import Logo from 'components/logo'
+import {useState} from 'react'
+import Tip from './tip'
+
 const Header = styled.header`
   border-bottom: 1px solid #ffeaef;
   background-color: #fff;
@@ -17,12 +20,18 @@ const ThemeC = styled(Theme)`
 `
 
 export default () => {
+  const [isShow, toggle] = useState<boolean>(true)
   return (
-    <Header>
-      <HeaderBody>
-        <Logo />
-        <ThemeC />
-      </HeaderBody>
-    </Header>
+    <>
+      {isShow && <Tip close={() => {
+        toggle(false)
+      }} />}
+      <Header>
+        <HeaderBody>
+          <Logo />
+          <ThemeC />
+        </HeaderBody>
+      </Header>
+    </>
   );
 }

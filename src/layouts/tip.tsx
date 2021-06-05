@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 import Icon from 'components/icon'
-import { TipProps } from '../type'
+
+export interface TipProps {
+  close: () => void
+}
 
 const Tip = styled.header`
   background-color: #fff8f9;

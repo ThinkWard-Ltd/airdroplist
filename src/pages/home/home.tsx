@@ -1,7 +1,5 @@
 import styled from 'styled-components'
-import {useState} from 'react'
 import Header from 'layouts/header'
-import Tip from './components/tip'
 import Banner from './components/banner'
 import Token from './components/token'
 import Footer from 'layouts/footer'
@@ -18,12 +16,8 @@ const AirDrop = styled.div`
 `
 
 export default () => {
-  const [isShow, toggle] = useState<boolean>(true)
   return (
     <>
-      {isShow && <Tip close={() => {
-        toggle(false)
-      }} />}
       <Header />
       <Banner />
       <Body>
