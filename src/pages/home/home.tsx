@@ -8,7 +8,7 @@ import Footer from 'layouts/footer'
 
 const Body = styled.div`
   width: 100%;
-  padding: 80px 0;
+  padding: 80px 0 20px 0;
   background-color: #fff8f9;
 `
 

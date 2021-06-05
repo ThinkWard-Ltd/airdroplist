@@ -57,7 +57,7 @@ export default () => {
     <Banner>
       <Title>
         <div style={{verticalAlign: 'inherit'}}>
-          立即订阅，我们将为您提供最有价值的<span style={{color: '#ff3465'}}>空投</span>项目<span style={{color: '#ff3465'}}>。</span>
+          整合最有价值的加密货币<span style={{color: '#ff3465'}}>空投</span>信息<span style={{color: '#ff3465'}}>。</span>
         </div>
       </Title>
       <H2>

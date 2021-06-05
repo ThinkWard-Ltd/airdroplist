@@ -20,5 +20,4 @@ const Logo = styled.div`
     border: 1px solid #fff;
   }
 `
-
 export default () => <Logo>Airdrop List</Logo>

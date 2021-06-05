@@ -38,7 +38,7 @@ const Button = styled.div`
 export default () => {
   return (
     <Emit>
-      <Input type="text" placeholder="输入邮箱，订阅即将优质空投" />
+      <Input type="text" placeholder="输入邮箱，订阅优质空投信息" />
       <Button>立即订阅</Button>
     </Emit>
   );

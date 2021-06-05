@@ -16,15 +16,11 @@ const ThemeC = styled(Theme)`
   float: right;
 `
 
-const LogoC = styled(Logo)`
-  line-height: 70px;
-`
-
 export default () => {
   return (
     <Header>
       <HeaderBody>
-        <LogoC />
+        <Logo />
         <ThemeC />
       </HeaderBody>
     </Header>
