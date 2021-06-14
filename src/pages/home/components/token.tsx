@@ -2,12 +2,13 @@ import styled from 'styled-components'
 import Icon from 'components/icon'
 import TokenStatus from "components/status";
 import { useHistory } from 'react-router-dom';
+import useTheme, { ThemeStyleProps } from 'hooks/useTheme'
 
-const Token = styled.div`
+const Token = styled.div<ThemeStyleProps>`
   width: 346px;
-  height: 314px;
-  background-color: #fff;
-  border: 1px solid #ffeaef;
+  height: 324px;
+  background-color: ${props => props?.dark ? "#171a23" : "#fff"};
+  border: 1px solid ${props => props?.dark ? "#171a23" : "#ffeaef"};
   border-radius: 24px;
   padding: 24px;
   cursor: pointer;
@@ -21,7 +22,8 @@ const Token = styled.div`
   }
   
   &:hover {
-    border: 1px solid #ff3465;
+    border: 1px solid ${props => props?.dark ? "#76cbff" : "#ff3465"};
+    background-color: ${props => props?.dark ? "#263444" : "#fff"};
   }
 `
 
@@ -44,11 +46,11 @@ const Platform = styled.svg`
   margin-right: 10px;
 `
 
-const TokenName = styled.div`
+const TokenName = styled.div<ThemeStyleProps>`
   font-size: 28px;
   line-height: 34px;
   font-weight: 600;
-  color: #212121;
+  color: ${props => props?.dark ? "#fff" : "#212121"};
   margin-bottom: 16px;
 
   p {
@@ -60,43 +62,44 @@ const TokenName = styled.div`
   }
 `
 
-const EachAmount = styled.div`
+const EachAmount = styled.div<ThemeStyleProps>`
   font-size: 28px;
   line-height: 34px;
   font-weight: 600;
-  color: #ff3465;
+  color: ${props => props?.dark ? "#76cbff" : "#ff3465"};
   margin-bottom: 16px;
 
   p {
     font-size: 14px;
     line-height: 20px;
     font-weight: 600;
-    color: #212121;
+    color: ${props => props?.dark ? "#fff" : "#212121"};
   }
 `
 
-const Claim = styled.div`
+const Claim = styled.div<ThemeStyleProps>`
   p {
     font-size: 14px;
-    line-height: 20px;
+    line-height: 30px;
     font-weight: 600;
-    color: #212121;
+    color: ${props => props?.dark ? "#fff" : "#212121"};
   }
 `
 
-const ClaimIcon = styled(Icon)`
+const ClaimIcon = styled(Icon)<ThemeStyleProps>`
   font-size: 40px;
   margin-right: 10px;
-  color: #ff3465;
+  color: ${props => props?.dark ? "#76cbff" : "#ff3465"};
   position: relative;
   left: -2px;
 `
 
 export default () => {
   const history = useHistory();
+  const { isDark } = useTheme()
 
   return (
-    <Token onClick={() => {
+    <Token dark={isDark} onClick={() => {
       history.push('/project')
     }}>
       <TokenTitle>
@@ -109,19 +112,19 @@ export default () => {
           <TokenStatus />
         </TokenStatusBox>
       </TokenTitle>
-      <TokenName>
+      <TokenName dark={isDark}>
         Single Dog Coin
         <p>空投总额 10,000,000,000 DSG</p>
       </TokenName>
-      <EachAmount>
+      <EachAmount dark={isDark}>
         <p>每人可领取</p>
         1000,000 DSG
       </EachAmount>
-      <Claim>
+      <Claim dark={isDark}>
         <p>要求</p>
-        <ClaimIcon type="funder-dianbao" />
-        <ClaimIcon style={{fontSize: '35px', top: '-2px'}} type="funder-discord" />
-        <ClaimIcon type="funder-twitter-circle-fill" />
+        <ClaimIcon dark={isDark} type="funder-dianbao" />
+        <ClaimIcon dark={isDark} style={{fontSize: '35px', top: '-2px'}} type="funder-discord" />
+        <ClaimIcon dark={isDark} type="funder-twitter-circle-fill" />
       </Claim>
     </Token>
   );

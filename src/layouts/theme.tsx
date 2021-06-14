@@ -1,10 +1,6 @@
 import styled from 'styled-components'
 import Icon from 'components/icon'
-import useTheme from 'hooks/useTheme'
-
-interface StyleProps {
-  dark: boolean
-}
+import useTheme, { ThemeStyleProps } from 'hooks/useTheme'
 
 const Theme = styled.div`
   display: inline-block;
@@ -14,7 +10,7 @@ const Theme = styled.div`
   top: 17px;
 `
 
-const Dark = styled.div<StyleProps>`
+const Dark = styled.div<ThemeStyleProps>`
   display: inline-block;
   width: 38px;
   height: 36px;
@@ -29,7 +25,7 @@ const Dark = styled.div<StyleProps>`
   margin-right: -1px;
 `
 
-const Light = styled.div<StyleProps>`
+const Light = styled.div<ThemeStyleProps>`
   background-color: ${props => props?.dark ? "#171a23" : "#ff3465"};
   color: #fff;
   display: inline-block;

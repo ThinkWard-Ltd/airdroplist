@@ -22,7 +22,7 @@ const light = {
 const ThemeContext = React.createContext({ isDark: null, toggleTheme: (isDark: boolean) => null })
 
 const ThemeContextProvider = ({ children }) => {
-  const [isDark, setIsDark] = useState(false)
+  const [isDark, setIsDark] = useState<boolean>(false)
 
   const toggleTheme = (isDark) => {
     setIsDark(isDark)

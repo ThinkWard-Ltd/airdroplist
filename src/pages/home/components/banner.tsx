@@ -1,12 +1,14 @@
 import styled from 'styled-components'
 import Emit from 'components/emit'
+import useTheme, { ThemeStyleProps } from 'hooks/useTheme'
 
-const Banner = styled.div`
+const Banner = styled.div<ThemeStyleProps>`
   height: 486px;
   position: relative;
   text-align: center;
   padding: 100px 0;
   overflow: hidden;
+  background-color: ${props => props?.dark ? "#171a23" : "#fff"};
 
   &::after {
     content: " ";
@@ -16,7 +18,6 @@ const Banner = styled.div`
     bottom: 0;
     background-size: auto 100%;
     background-repeat: no-repeat;
-    z-index: -1;
     background-image: url("/img/home-right_light.svg");
     right: 0;
   }
@@ -29,18 +30,18 @@ const Banner = styled.div`
     bottom: 0;
     background-size: auto 100%;
     background-repeat: no-repeat;
-    z-index: -1;
     background-image: url("/img/home-left_light.svg");
     left: 0;
   }
 `
 
-const Title = styled.div`
+const Title = styled.div<ThemeStyleProps>`
   font-size: 58px;
   line-height: 64px;
   font-weight: 800;
   max-width: 700px;
   margin: 0 auto 16px;
+  color: ${props => props?.dark ? "#fff" : "#212121"};
 `
 
 const H2 = styled.h2`
@@ -53,11 +54,13 @@ const H2 = styled.h2`
 `
 
 export default () => {
+  const { isDark } = useTheme()
+
   return (
-    <Banner>
-      <Title>
+    <Banner dark={isDark}>
+      <Title dark={isDark}>
         <div style={{verticalAlign: 'inherit'}}>
-          整合最有价值的加密货币<span style={{color: '#ff3465'}}>空投</span>信息<span style={{color: '#ff3465'}}>。</span>
+          整合最有价值的加密货币<span style={{color: isDark ? '#76cbff' : '#ff3465'}}>空投</span>信息<span style={{color: isDark ? '#76cbff' : '#ff3465'}}>。</span>
         </div>
       </Title>
       <H2>

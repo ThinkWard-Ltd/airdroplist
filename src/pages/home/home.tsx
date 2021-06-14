@@ -3,11 +3,12 @@ import Header from 'layouts/header'
 import Banner from './components/banner'
 import Token from './components/token'
 import Footer from 'layouts/footer'
+import useTheme, { ThemeStyleProps } from 'hooks/useTheme'
 
-const Body = styled.div`
+const Body = styled.div<ThemeStyleProps>`
   width: 100%;
-  padding: 80px 0 20px 0;
-  background-color: #fff8f9;
+  padding: 80px 0 60px 0;
+  background-color: ${props => props?.dark ? "#000" : "#fff8f9"};
 `
 
 const AirDrop = styled.div`
@@ -16,11 +17,13 @@ const AirDrop = styled.div`
 `
 
 export default () => {
+  const { isDark } = useTheme()
+
   return (
     <>
       <Header />
       <Banner />
-      <Body>
+      <Body dark={isDark}>
         <AirDrop>
           <Token />
           <Token />

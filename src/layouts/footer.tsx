@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 import Logo from 'components/logo'
 import Emit from 'components/emit'
+import useTheme, { ThemeStyleProps } from 'hooks/useTheme'
 
-const Footer = styled.footer`
-  background-color: #fff;
+const Footer = styled.footer<ThemeStyleProps>`
+  background-color: ${props => props?.dark ? "#171a23" : "#fff"};
   padding: 40px 0;
 `
 const FooterBody = styled.div`
@@ -11,11 +12,11 @@ const FooterBody = styled.div`
   margin: 0 auto;
 `
 
-const Copyright = styled.div`
+const Copyright = styled.div<ThemeStyleProps>`
   font-size: 12px;
   line-height: 18px;
   font-weight: 400;
-  color: #212121;
+  color: ${props => props?.dark ? "#fff" : "#212121"};
   margin-top: 10px;
 `
 
@@ -25,17 +26,17 @@ const FooterItem = styled.div`
   width: 200px;
 `
 
-const FooterItemTitle = styled.div`
+const FooterItemTitle = styled.div<ThemeStyleProps>`
   font-size: 14px;
   line-height: 20px;
-  color: #212121;
+  color: ${props => props?.dark ? "#fff" : "#212121"};
   font-weight: 800;
 `
 
-const Link = styled.a`
+const Link = styled.a<ThemeStyleProps>`
   font-size: 12px;
   line-height: 20px;
-  color: #212121;
+  color: ${props => props?.dark ? "#fff" : "#212121"};
   font-weight: 400;
   margin-top: 10px;
   display: block;
@@ -50,14 +51,14 @@ const ContactUs = styled.div`
   text-align: right;
 `
 
-const Banner = styled.div`
+const Banner = styled.div<ThemeStyleProps>`
   height: 366px;
   position: relative;
   text-align: center;
   padding: 80px 200px;
   border-radius: 16px;
   margin: 40px 0 100px 0;
-  background-color: #212121;
+  background-color: ${props => props?.dark ? "#000" : "#212121"};
 
   &::after {
     content: " ";
@@ -102,10 +103,12 @@ const BannerEmit = styled.div`
 `
 
 export default () => {
+  const { isDark } = useTheme()
+
   return (
-    <Footer>
+    <Footer dark={isDark}>
       <FooterBody>
-        <Banner>
+        <Banner dark={isDark}>
           <BannerTitle>获取新的空投</BannerTitle>
           <BannerEmit>订阅可获取新的空投和重要的通知。</BannerEmit>
           <Emit />
@@ -113,19 +116,19 @@ export default () => {
         <div style={{height: '160px'}}>
           <FooterItem>
             <Logo />
-            <Copyright>© AirdropList 2021</Copyright>
+            <Copyright dark={isDark}>© AirdropList 2021</Copyright>
           </FooterItem>
           <ContactUs>
             <FooterItem>
-              <FooterItemTitle>商务合作</FooterItemTitle>
-              <Link>申请空投</Link>
-              <Link>邮箱</Link>
+              <FooterItemTitle dark={isDark}>商务合作</FooterItemTitle>
+              <Link dark={isDark}>申请空投</Link>
+              <Link dark={isDark}>邮箱</Link>
             </FooterItem>
             <FooterItem>
-              <FooterItemTitle>社交</FooterItemTitle>
-              <Link>电报群</Link>
-              <Link>推特</Link>
-              <Link>博客</Link>
+              <FooterItemTitle dark={isDark}>社交</FooterItemTitle>
+              <Link dark={isDark}>电报群</Link>
+              <Link dark={isDark}>推特</Link>
+              <Link dark={isDark}>博客</Link>
             </FooterItem>
           </ContactUs>
         </div>
