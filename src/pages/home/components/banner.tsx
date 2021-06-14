@@ -18,7 +18,7 @@ const Banner = styled.div<ThemeStyleProps>`
     bottom: 0;
     background-size: auto 100%;
     background-repeat: no-repeat;
-    background-image: url("/img/home-right_light.svg");
+    background-image: url(${props => props?.dark ? "/img/home-right_dark.svg" : "/img/home-right_light.svg"});
     right: 0;
   }
 
@@ -30,7 +30,7 @@ const Banner = styled.div<ThemeStyleProps>`
     bottom: 0;
     background-size: auto 100%;
     background-repeat: no-repeat;
-    background-image: url("/img/home-left_light.svg");
+    background-image: url(${props => props?.dark ? "/img/home-left_dark.svg" : "/img/home-left_light.svg"});
     left: 0;
   }
 `

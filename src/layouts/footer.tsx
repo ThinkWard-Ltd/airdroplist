@@ -68,7 +68,7 @@ const Banner = styled.div<ThemeStyleProps>`
     bottom: 0;
     background-size: auto 100%;
     background-repeat: no-repeat;
-    background-image: url("/img/subscribe-right_light.svg");
+    background-image: url(${props => props?.dark ? "/img/subscribe-right_dark.svg" : "/img/subscribe-right_light.svg"});
     right: 0;
     background-position: 100%;
   }
@@ -81,7 +81,7 @@ const Banner = styled.div<ThemeStyleProps>`
     bottom: 0;
     background-size: auto 100%;
     background-repeat: no-repeat;
-    background-image: url("/img/subscribe-left_light.svg");
+    background-image: url(${props => props?.dark ? "/img/subscribe-left_dark.svg" : "/img/subscribe-left_light.svg"});
     left: 0;
   }
 `
